@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://contact-management-system-agn1.onrender.com'; 
+const API_URL = 'https://contact-9vog.onrender.com'; 
 
 
 export const registerApi = async (userData) => {
