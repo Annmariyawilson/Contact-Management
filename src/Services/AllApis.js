@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://contact-management-4flm.onrender.com'; 
+const API_URL = 'https://contact-backend-stc5.onrender.com'; 
 
 // const API_URL = 'http://localhost:3002';
 
