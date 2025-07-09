@@ -1,3 +1,4 @@
+// Home.js
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { getContacts, deleteContact } from '../Services/AllApis';
@@ -21,6 +22,13 @@ function Home() {
         setContacts((prevContacts) => [...prevContacts, newContact]);
     };
 
+    const handleUpdate = (updatedContact) => {
+    setContacts(prev =>
+        prev.map(c => (c.id === updatedContact.id ? updatedContact : c))
+    );
+};
+
+
     const handleDelete = async (id) => {
         try {
             await deleteContact(id);
@@ -37,10 +45,10 @@ function Home() {
     }, []);
 
     return (
-        <div className="container mt-5">
-            <h2 className="text-center">Contact List</h2>
+        <div className="container py-4">
             <AddContact onAddContact={handleAddContact} />
-            <ContactList contacts={contacts} onDelete={handleDelete} />
+<ContactList contacts={contacts} onDelete={handleDelete} onUpdate={handleUpdate} />
+            
         </div>
     );
 }
